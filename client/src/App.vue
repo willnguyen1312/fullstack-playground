@@ -4,15 +4,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import { defineComponent, onMounted } from "vue";
+import axios from "axios";
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default defineComponent({
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-})
+    HelloWorld,
+  },
+  setup() {
+    onMounted(async () => {
+      const data = await axios.get("http://localhost:4000");
+      console.log(data);
+    });
+  },
+});
 </script>
 
 <style>
