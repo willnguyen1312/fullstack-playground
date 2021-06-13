@@ -13,12 +13,6 @@ export default defineComponent({
   components: {
     HelloWorld,
   },
-  setup() {
-    onMounted(async () => {
-      const data = await axios.get("http://localhost:4000");
-      console.log(data);
-    });
-  },
 });
 </script>
 
